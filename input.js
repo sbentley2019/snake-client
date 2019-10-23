@@ -6,6 +6,9 @@ const handleUserInput = function(key) {
   }
 
   switch (key) {
+    case 'x':
+      connection.write("Say: Hello World");
+      break;
     case 'w':
       connection.write("Move: up");
       break;
@@ -27,8 +30,8 @@ const setupInput = function(conn) {
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
   stdin.resume();
-
   stdin.on('data', handleUserInput);
+  
   return stdin;
 };
 
