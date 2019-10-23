@@ -11,11 +11,13 @@ const connect = function() {
   conn.on('connect', () => {
     console.log("connection successfully established.");
     conn.write("Name: 000");
+  //  conn.write("Move: up");
   });
 
   conn.on('data', (data) => {
     console.log(data);
   });
+
   return conn;
 };
 
